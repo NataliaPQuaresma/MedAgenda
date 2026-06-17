@@ -1,0 +1,7 @@
+{
+  "name": "MedAgenda",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
