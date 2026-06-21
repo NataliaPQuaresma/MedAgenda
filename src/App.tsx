@@ -1,7 +1,13 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
+import React from 'react';
+import Login from './pages/login/login';
+import Dashboard from './pages/dashboard/dashboard';
+import Medicos from './pages/medicos/medicos';
+import Consultas from './pages/consultas/consultas';
+import Agendamento from './pages/Agendamento/agendamento';
+import Editar from './pages/Consultas/editar';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -30,6 +36,7 @@ import '@ionic/react/css/display.css';
 /* import '@ionic/react/css/palettes/dark.class.css'; */
 import '@ionic/react/css/palettes/dark.system.css';
 
+
 /* Theme variables */
 import './theme/variables.css';
 
@@ -39,11 +46,26 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
+        <Route exact path="/login">
+          <Login />
         </Route>
         <Route exact path="/">
-          <Redirect to="/home" />
+          <Redirect to="/login" />
+        </Route>
+        <Route exact path="/home">
+          <Dashboard />
+        </Route>
+        <Route exact path="/medicos">
+          <Medicos />
+        </Route>
+        <Route exact path="/consultas">
+        <Consultas />
+        </Route>
+        <Route exact path="/agendamento/:id">
+        <Agendamento />
+        </Route>
+        <Route exact path="/editar/:id">
+        <Editar />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
