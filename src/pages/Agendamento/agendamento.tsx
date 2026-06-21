@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import { useHistory } from 'react-router';
 import { buscar } from '../../services/StorageService';
 import { criar } from '../../services/ConsultaService';
+import './agendamento.css';
 
 const Agendamento: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -32,20 +33,22 @@ const Agendamento: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className='agendamento-container'>
             <h1>Agendamento</h1>
             {medico && (
-                <div>
+                <div className='agendamento-info'>
                     <p>Médico: {medico.nome}</p>
                     <p>Especialidade: {medico.especialidade}</p>
                     <h2>Horários disponíveis:</h2>
-                    {medico.horarios.map((horario: string, index: number) => (
-                        <button key={index} onClick={() => setHorarioSelecionado(horario)}>
-                            {horario}
-                        </button>
-                    ))}
+                    <div className='horarios'>
+                        {medico.horarios.map((horario: string, index: number) => (
+                            <button key={index} onClick={() => setHorarioSelecionado(horario)}>
+                                {horario}
+                            </button>
+                        ))}
+                    </div>
                     {horarioSelecionado && (
-                        <div>
+                        <div className='confirmar'>
                             <p>Horário selecionado: {horarioSelecionado}</p>
                             <button onClick={confirmarAgendamento}>Confirmar</button>
                         </div>

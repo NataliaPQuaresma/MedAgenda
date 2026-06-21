@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import { useHistory } from 'react-router';
 import { buscar } from '../../services/StorageService';
 import { listar, editar } from '../../services/ConsultaService';
+import './editar.css';
 
 const Editar: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -28,19 +29,21 @@ const Editar: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className='editar-container'>
             <h1>Editar Consulta</h1>
             {consulta && medico && (
-                <div>
+                <div className='editar-info'>
                     <p>Médico: {consulta.medico}</p>
                     <h2>Escolha um novo horário:</h2>
-                    {medico.horarios.map((horario: string, index: number) => (
-                        <button key={index} onClick={() => setHorarioSelecionado(horario)}>
-                            {horario}
-                        </button>
-                    ))}
+                    <div className='horarios'>
+                        {medico.horarios.map((horario: string, index: number) => (
+                            <button key={index} onClick={() => setHorarioSelecionado(horario)}>
+                                {horario}
+                            </button>
+                        ))}
+                    </div>
                     {horarioSelecionado && (
-                        <div>
+                        <div className='salvar'>
                             <p>Novo horário: {horarioSelecionado}</p>
                             <button onClick={salvarEdicao}>Salvar</button>
                         </div>

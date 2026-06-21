@@ -1,0 +1,66 @@
+.agendamento-container {
+    padding: 20px;
+    background-color: #f0f4f8;
+    min-height: 100vh;
+}
+
+.agendamento-container h1 {
+    color: #1a73e8;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.agendamento-container h2 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.agendamento-info {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.agendamento-info p {
+    color: #333;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.horarios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.horarios button {
+    background-color: white;
+    color: #1a73e8;
+    border: 2px solid #1a73e8;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.horarios button:hover {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.confirmar button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}

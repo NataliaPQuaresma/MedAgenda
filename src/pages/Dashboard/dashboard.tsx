@@ -1,14 +1,19 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-
+import './Dashboard.css';
 const Dashboard: React.FC = () => {
-const history = useHistory();
+    const history = useHistory();
     return (
-        <div>
-            <h1>Bem-Vinda, Nati</h1>
-            <button onClick={() => history.push('/medicos')}>Agendar Consulta</button>
-            <button onClick={() => history.push('/consultas')}>Minhas Consultas</button>
-            
+        <div className='dashboard-container'>
+            <h1>Bem-Vindo ao MedAgenda</h1>
+            <div className='dashboard-cards'>
+                <div className='card'>
+                    <button onClick={() => history.push('/medicos')}>Agendar Consulta</button>
+                </div>
+                <div className='card'>
+                    <button onClick={() => history.push('/consultas')}>Minhas Consultas</button>
+                </div>
+            </div>
         </div>
     );
 };

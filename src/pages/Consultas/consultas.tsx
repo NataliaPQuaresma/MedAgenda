@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { buscar } from '../../services/StorageService';
 import { listar, excluir } from '../../services/ConsultaService';
 import { useHistory } from 'react-router';
+import './consultas.css';
 
 const Consultas: React.FC = () => {
     const [consultas, setConsultas] = useState([]);
@@ -25,18 +26,19 @@ const Consultas: React.FC = () => {
     const history = useHistory();
 
     return (
-        <div>
+        <div className='consultas-container'>
             <h1>Minhas Consultas</h1>
             {consultas.map((consulta: any, index) => (
-                <div key={index}>
+                <div key={index} className='consulta-card'>
                     <p>Médico: {consulta.medico}</p>
                     <p>Horário: {consulta.horario}</p>
                     <p>Status: {consulta.status}</p>
-                    <button onClick={() => history.push(`/editar/${consulta.id}`)}>Editar</button>
-                    <button onClick={() => cancelar(consulta.id)}>Cancelar</button>
+                    <div className='consulta-acoes'>
+                        <button className='btn-editar' onClick={() => history.push(`/editar/${consulta.id}`)}>Editar</button>
+                        <button className='btn-cancelar' onClick={() => cancelar(consulta.id)}>Cancelar</button>
+                    </div>
                 </div>
             ))}
-            
         </div>
     );
 };

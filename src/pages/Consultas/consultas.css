@@ -1,0 +1,57 @@
+.consultas-container {
+    padding: 20px;
+    background-color: #f0f4f8;
+    min-height: 100vh;
+}
+
+.consultas-container h1 {
+    color: #1a73e8;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.consulta-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.consulta-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(26, 115, 232, 0.3);
+}
+
+.consulta-card p {
+    color: #333;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.consulta-acoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.consulta-acoes button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-editar {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.btn-cancelar {
+    background-color: #e53935;
+    color: white;
+}
